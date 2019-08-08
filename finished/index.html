@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Article Search App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <form id="main" v-cloak>
+
+        <div class="bar">
+            <input type="text" v-model="searchString" placeholder="Enter your search..">
+        </div>
+
+        <ul>
+            <li v-for="article in filteredArticles">
+                <a v-bind:href="article.url"><img v-bind:src="article.image" alt=""></a>
+                <p>{{article.title}}</p>
+            </li>
+        </ul>
+
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
